@@ -35,36 +35,6 @@ header {
   }
 }
 
-.card{
-  border: 2px solid rgb(80, 79, 80);
-  padding: 30px;
-  width: 210px;
-  border-radius: 40px ;
-  margin-right: 40px;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
- 
-  &:hover{
-    box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
-  }
-  .favorite{
-    position: absolute;
-    cursor: pointer;
-  }
- 
-  span{
-    font-size: 12px;
-    opacity: 0.5;
-    text-transform: uppercase;
-    b{
-      font-size: 13px;
-    }
-  }
-  h5{
-    font-weight: 400;
-    font-size: 14px;
-  }
-}
 
 .button{
   background:white;
@@ -82,11 +52,19 @@ header {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
   input{
     border: 0;
     padding: 13px;
     font-size: 16px;
     width: 200px;
+  }
+  .clear{
+    position: absolute;
+    right: 10px;
+    width: 23px;
+    height: 23px;
+    top:12px;
   }
 }
 .overlay{
@@ -99,28 +77,31 @@ header {
   z-index: 1;
 
 }
-.drawer{
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  width: 420px;
-  right: 0;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  .items{
-    overflow: auto;
-    margin-bottom: 40px;
+.cartEmpty{
+  text-align: center;
+  p{
+    width: 280px;
+    margin-top: 20px;
   }
-  h2{
-    margin:0;
+  .greenBotton{
+    width: 245px;
+    margin-top: 20px;
+    img{
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+    &:hover{
+      img{
+        transform: rotate(180deg) translateX(3px);
+      }
+      
+    }
+   
+  }
   
-
-  }
-}
-.items{
-  flex: 1;
 }
 .cartTotalBlock{
   ul{
