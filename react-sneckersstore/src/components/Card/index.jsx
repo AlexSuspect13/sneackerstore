@@ -6,7 +6,7 @@ function Card({ id,imageUrl, price, title, onPlus, onFavorite, favorited=false }
   const [isFavorite, setIsFavorite] = React.useState(favorited);
 
   const onClickPlus = () => {
-    onPlus({ imageUrl, price, title }); // диструкторизированные пропсы
+    onPlus({id, imageUrl, price, title }); // диструкторизированные пропсы
     setIsAdded(!isAdded);
   };
 
@@ -20,7 +20,7 @@ function Card({ id,imageUrl, price, title, onPlus, onFavorite, favorited=false }
       <div className={styles.favorite} onClick={onClickFavorite}>
         <img
           src={isFavorite ? "/img/liked.svg" : "/img/unliked.svg"}
-          alt="FAvotite"
+          alt="Favotite"
         />
       </div>
       <img width={133} height={112} src={imageUrl} alt="" />
@@ -32,7 +32,7 @@ function Card({ id,imageUrl, price, title, onPlus, onFavorite, favorited=false }
         </div>
         <img
           className={styles.plus}
-          onClick={onClickPlus}
+          onClick={onClickPlus()}
           src={isAdded ? "/img/checked.svg" : "/img/plus.svg"}
           alt="Plus"
         ></img>
