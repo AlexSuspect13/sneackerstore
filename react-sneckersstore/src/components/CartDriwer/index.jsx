@@ -17,17 +17,21 @@ function Cart({ onClose, items = [], onRemove }) {
           <div>
             <div className={styles.item}>
               {items.map((obj) => (
-                <div key ={obj.id} className="cartItem d-flex align-center mb-20">
+                <div
+                  key={obj.id}
+                  className="cartItem d-flex align-center mb-20"
+                >
                   <div
                     style={{ backgroundImage: `url( ${obj.imageUrl} )` }}
                     className="cartItemImg"
                   ></div>
+
                   <div className="mr-20 flex">
                     <p className="mb-5">{obj.title}</p>
                     <b>{obj.price} руб.</b>
                   </div>
                   <img
-                    onClic k={() => onRemove(obj.id)}
+                    onClick={() => onRemove(obj.id)}
                     className="removeBtn"
                     src="/img/btn-remove.svg"
                     alt="Remove"

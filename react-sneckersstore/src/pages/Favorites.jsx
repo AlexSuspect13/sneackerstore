@@ -11,6 +11,7 @@ function Favorites({items,onAddToFavorite}){
             key={index}
             favorited={true}
             onFavorite={onAddToFavorite}
+            id={item.id}
             {...item}/>
             
             

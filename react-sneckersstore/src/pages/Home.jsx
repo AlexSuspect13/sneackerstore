@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 function HomePage({  items,
+cartItems,
 searchValue,
 onChangeSearchInput,
 setSearchValue,
@@ -23,9 +24,10 @@ onAddToCart
             <Card 
             key={index}
             title = {item.title}
+            added={cartItems.some((obj) => obj.title === item.title)}
             price = {item.price}
             imageUrl = {item.image} 
-            onFavorite = {( obj) => {onAddToFavorite(obj)}} 
+            onFavorite = {(obj) => {onAddToFavorite(obj)}} 
             onPlus = {(obj) => onAddToCart(obj)} />
           ))}
         </div>
